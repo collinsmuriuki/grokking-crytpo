@@ -4,13 +4,13 @@ version = "0.1.0"
 authors = ["Collins Muriuki <murerwacollins@gmail.com>"]
 edition = "2018"
 
-[bin]
+[lib]
+name = "blockchain"
+path = "src/lib.rs"
+
+[[bin]]
 name = "toy_bc"
 path = "src/main.rs"
-
-[[lib]]
-name = "toy_bc_lib"
-path = "src/lib/lib.rs"
 
 
 [dependencies]
