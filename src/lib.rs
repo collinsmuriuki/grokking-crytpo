@@ -141,11 +141,11 @@ impl Chain {
             let slice = &hash[..header.difficulty as usize];
             match slice.parse::<u32>() {
                 Ok(val) => {
-                    if val != 0 {
-                        header.nonce += 1;
-                    } else {
+                    if val <= header.difficulty as u32 {
                         println!("Block hash: {}", hash);
                         break;
+                    } else {
+                        header.nonce += 1;
                     }
                 }
                 Err(_) => {
